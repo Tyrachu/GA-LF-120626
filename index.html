@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figaro · Attal 专访：「把恋童犯当恐怖分子来处置」</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fig-navy:#122148;
+  --fig-navy-dark:#0A1530;
+  --fig-blue:#1B4F8E;
+  --fig-red:#B91C2D;
+  --noir:#181818;
+  --gris:#8B8B8B;
+  --gris-fonce:#3B3B3B;
+  --gris-clair:#666;
+  --gris-ligne:#D9D9D9;
+  --bg-quote:#F4F7FB;
+  --bg-annot:#FFF8E1;
+  --orange:#C7842F;
+  --ink-zh:#0D2747;
+  --ink-fr:#1B4F8E;
+  --serif:"Times New Roman",Times,"Songti SC","STSong","Source Han Serif SC",serif;
+  --sans:Arial,Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --wordmark:"Bodoni Moda","Bodoni 72","Bodoni MT","Didot","Le Figaro",Garamond,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
+  color:var(--noir);
+  background:#FAFAF8;
+  max-width:760px;
+  margin:0 auto;
+  padding:0 18px 80px;
+  line-break:strict;
+  word-break:normal;
+  overflow-wrap:break-word;
+  hanging-punctuation:allow-end;
+}
+em.fr{word-break:keep-all;}
+
+/* ===== Sticky control bar ===== */
+.ctrl{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,250,248,0.95);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--gris-ligne);
+  display:flex;justify-content:flex-start;align-items:center;
+  padding:8px 0;
+  font-size:12px;
+  margin:0 -18px 0;
+  padding-left:18px;padding-right:18px;
+}
+.ctrl label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;color:var(--gris-fonce);}
+
+/* ===== IG-style header ===== */
+.ig{display:flex;align-items:center;gap:11px;padding:18px 0 14px;}
+.ig-ring{
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  display:flex;align-items:center;justify-content:center;
+  padding:2px;
+}
+.ig-ring-inner{
+  width:100%;height:100%;
+  background:#fff;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.ig-letter{
+  font-family:"Bodoni Moda","Bodoni MT","Didot","Times New Roman",serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:22px;
+  color:var(--fig-navy);
+  line-height:1;
+}
+.ig-name-wrap{display:flex;flex-direction:column;gap:2px;}
+.ig-name{
+  font-family:var(--sans);font-weight:700;font-size:14px;color:#000;
+  line-height:1.1;
+}
+.ig-tagline{
+  font-family:var(--wordmark);
+  font-style:italic;
+  font-size:10.5px;
+  color:var(--gris-clair);
+  line-height:1.2;
+  max-width:240px;
+}
+
+/* ===== Date strip ===== */
+.datestrip{
+  border-top:1px solid var(--gris-ligne);
+  border-bottom:2px solid var(--fig-navy);
+  padding:9px 0 8px;
+  font-size:11px;
+  color:var(--gris);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.datestrip .theme{color:var(--fig-navy);font-weight:700;letter-spacing:0.8px;text-transform:none;}
+
+/* ===== Claude stamp ===== */
+.claude-print{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:11.5px;
+  color:var(--gris);
+  margin:9px 0 22px;
+  text-align:right;
+}
+
+/* ===== Article structure ===== */
+article{margin:30px 0;}
+.rubrique{
+  color:var(--fig-navy);
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:10px;
+}
+h1.titre{
+  font-family:var(--serif);
+  font-size:33px;
+  font-weight:900;
+  line-height:1.18;
+  letter-spacing:-0.3px;
+  color:var(--noir);
+  margin-bottom:14px;
+}
+.titre-fr{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:15px;
+  color:var(--gris-fonce);
+  line-height:1.4;
+  margin-bottom:16px;
+  font-weight:400;
+}
+.chapo{
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.55;
+  color:var(--gris-fonce);
+  margin-bottom:14px;
+  font-weight:400;
+}
+.signature{
+  font-size:12px;
+  color:var(--gris-clair);
+  font-style:italic;
+  margin-bottom:24px;
+  border-top:1px solid var(--gris-ligne);
+  border-bottom:1px solid var(--gris-ligne);
+  padding:7px 0;
+}
+
+/* ===== Q&A blocks ===== */
+.qa{margin:0 0 4px;}
+.q{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:16.5px;
+  color:var(--fig-navy);
+  line-height:1.45;
+  margin:24px 0 9px;
+}
+.q::before{
+  content:"LE FIGARO. — ";
+  font-style:italic;
+  font-weight:400;
+  font-size:12px;
+  letter-spacing:0.5px;
+  color:var(--gris);
+}
+.q.nofg::before{content:"";}
+.a{
+  margin-bottom:7px;
+  font-size:16px;
+  line-height:1.72;
+  text-align:justify;
+}
+.a::before{
+  content:"GABRIEL ATTAL. — ";
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:0.5px;
+  color:var(--fig-red);
+}
+.a.cont::before{content:"";}
+.a + .a{margin-top:11px;}
+
+/* inline french */
+.a .fr, .q .fr{
+  font-family:var(--serif);font-style:italic;
+  color:var(--ink-fr);
+}
+
+/* ===== Lead bilingual quote ===== */
+blockquote.lead{
+  background:var(--bg-quote);
+  border-left:4px solid var(--fig-navy);
+  padding:18px 20px;
+  margin:22px 0;
+}
+blockquote.lead .zh{
+  font-family:var(--serif);
+  font-size:15.5px;
+  color:var(--ink-zh);
+  line-height:1.6;
+  font-weight:400;
+}
+blockquote.lead .sep{
+  border-top:1px dashed var(--fig-blue);
+  margin:11px 0 9px;
+  opacity:0.5;
+}
+blockquote.lead .fr{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:12.5px;
+  color:var(--ink-fr);
+  line-height:1.55;
+}
+blockquote.lead .src{
+  font-size:11.5px;
+  color:var(--gris-clair);
+  margin-top:10px;
+  text-align:right;
+}
+
+/* ===== Pull quote ===== */
+.pull{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:19px;
+  line-height:1.4;
+  color:var(--fig-navy);
+  border-top:2px solid var(--fig-navy);
+  border-bottom:2px solid var(--fig-navy);
+  padding:16px 4px;
+  margin:26px 0;
+}
+.pull .pf{
+  display:block;
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:13px;
+  color:var(--ink-fr);
+  line-height:1.5;
+  margin-top:9px;
+}
+
+/* ===== Annotations ===== */
+.annot{
+  border-bottom:1px dashed var(--fig-blue);
+  cursor:pointer;
+  position:relative;
+}
+.annot sup{
+  color:var(--fig-blue);
+  font-size:13px;
+  font-weight:700;
+  margin-left:1px;
+}
+.annot-text{
+  display:none;
+  background:var(--bg-annot);
+  border-left:3px solid var(--orange);
+  padding:11px 14px;
+  margin:8px 0 14px;
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--gris-fonce);
+}
+.annot-text.show{display:block;}
+.annot-text strong{color:var(--noir);}
+body.annot-all .annot-text{display:block;}
+
+/* ===== Context box ===== */
+.encadre{
+  background:var(--bg-quote);
+  border-top:3px solid var(--fig-navy);
+  padding:16px 18px;
+  margin:24px 0;
+}
+.encadre-label{
+  font-size:10.5px;letter-spacing:1.5px;color:var(--fig-navy);
+  font-weight:700;text-transform:uppercase;margin-bottom:8px;
+}
+.encadre p{font-size:14px;line-height:1.7;margin-bottom:8px;}
+.encadre p:last-child{margin-bottom:0;}
+
+/* ===== Back-to-top ===== */
+.totop{
+  position:fixed;bottom:20px;right:20px;
+  background:var(--fig-navy);color:#fff;
+  width:42px;height:42px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+  font-size:18px;text-decoration:none;
+  border:0;cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+}
+.totop.show{display:flex;}
+
+/* ===== Footer ===== */
+.copyright{
+  margin-top:54px;
+  padding:22px 0 12px;
+  border-top:2px solid var(--fig-navy);
+  font-size:12px;
+  line-height:1.65;
+  color:var(--gris-fonce);
+}
+.copyright .block-zh{margin-bottom:14px;}
+.copyright .block-zh p{margin-bottom:4px;}
+.copyright .sep-line{
+  border:0;border-top:1px dashed var(--gris-ligne);
+  margin:14px 0;
+}
+.copyright .block-fr p{
+  font-family:var(--serif);font-style:italic;
+  margin-bottom:4px;color:var(--gris-clair);font-size:11.5px;
+}
+.footer-claude{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--gris);
+  margin-top:18px;
+  padding-top:10px;
+  border-top:1px dotted var(--gris-ligne);
+  text-align:right;
+}
+
+@media (max-width:480px){
+  h1.titre{font-size:26px;}
+  .a,.q{text-align:left;}
+  body{padding:0 14px 80px;}
+  .ctrl{margin:0 -14px;padding-left:14px;padding-right:14px;}
+  .pull{font-size:17px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Sticky control ===== -->
+<div class="ctrl">
+  <label><input type="checkbox" id="annotAll"> <span id="annotLabel">Notes</span></label>
+</div>
+
+<!-- ===== IG header ===== -->
+<div class="ig">
+  <div class="ig-ring"><div class="ig-ring-inner"><span class="ig-letter">F</span></div></div>
+  <div class="ig-name-wrap">
+    <div class="ig-name">lefigaro</div>
+    <div class="ig-tagline">«&nbsp;Sans la liberté de blâmer, il n’est point d’éloge flatteur&nbsp;» — Beaumarchais</div>
+  </div>
+</div>
+
+<!-- ===== Date strip ===== -->
+<div class="datestrip">
+  <span>SAMEDI 13 · DIMANCHE 14 JUIN 2026 · N° 25 440</span>
+  <span class="theme">L’événement · Attal 专访 · 原文 PAGE 4</span>
+</div>
+
+<!-- ===== Claude stamp ===== -->
+<p class="claude-print">Claude [Anthropic] 译</p>
+
+<!-- ============================================================ -->
+<!-- INTERVIEW: GABRIEL ATTAL                                      -->
+<!-- ============================================================ -->
+<article id="entretien">
+  <div class="rubrique">L’événement · Entretien</div>
+  <h1 class="titre">「应当把恋童犯的处置，对标对恐怖分子的处置」</h1>
+  <p class="titre-fr">«&nbsp;Il faut aligner le traitement des pédocriminels sur celui des terroristes&nbsp;»</p>
+
+  <p class="chapo">前总理、Renaissance 党总统候选人 Gabriel Attal 认为，在 Lyhanna <span class="annot" data-pop="lyhanna">案<sup>*</sup></span>之后，「<em class="fr">总得有人来承担</em>⁠」。</p>
+  <div class="annot-text" id="ann-lyhanna">
+    <strong>Lyhanna 案</strong>　Lyhanna 是一名 11 岁的女中学生，于 2026 年 6 月初在<em class="fr">Gers</em>省被发现遇害，凶嫌 <em class="fr">Jérôme Barella</em> 被控施暴并杀害。据司法消息源，此人自 2017 年起已多次被举报或被立案，却始终未被有效处置——正是这一点把案件从个案推成了对法国司法链条的全国性问责。本期《Le Figaro》头版即以「<em class="fr">Lyhanna : la semaine qui a ébranlé la justice française</em>──撼动法国司法的一周」为题。Attal 这篇专访，是这一问责浪潮中右翼与中间阵营多位 2027 总统竞选人各自表态的一部分。
+  </div>
+
+  <p class="signature">访谈：Tristan Quinault-Maupoil、Marie-Cécile Renault · 阅读约 8 分钟</p>
+
+  <!-- Q1 -->
+  <div class="q">Lyhanna 之死引发了举国震动。司法首当其冲被指责──但政治权力能否就此免去自己的一份责任？</div>
+  <p class="a">当然不能。在这件事上，国家失职了。国家最重要的责任，就是保护法国人，尤其是其中最脆弱的那一群──孩子。这场悲剧里最让人无法接受的，是如果司法运转正常，这起谋杀本可避免。显然，所有曾经担负过责任的人──我也是其中之一──都必须自问，这些年里，为了让司法完成它的使命，哪些做了、哪些没做。在这件事上，<em class="fr">总得有人来承担</em>⁠。法国人有权知道究竟发生了什么。因为我们的孩子是神圣不可侵犯的。</p>
+
+  <!-- Q2 -->
+  <div class="q">Gérald Darmanin 应该辞职吗？</div>
+  <p class="a">在眼下这种局面里，把时间和精力花在更换<span class="annot" data-pop="sceaux">司法部长<sup>*</sup></span>上，真的有助于把事情往前推吗？我不这么认为。</p>
+  <div class="annot-text" id="ann-sceaux">
+    <strong>«&nbsp;garde des Sceaux&nbsp;»──掌玺大臣 / 司法部长</strong>　法国司法部长的传统正式头衔，字面意为「掌玺者」，源自旧制度下为国王保管国玺的重臣。如今是司法部长的同义称谓，在正式语境与新闻中与「<em class="fr">ministre de la Justice</em>⁠」交替使用。本文涉及的现任司法部长是 <em class="fr">Gérald Darmanin</em>⁠。
+  </div>
+
+  <!-- Q3 -->
+  <div class="q">你希望就此案成立一个调查委员会吗？</div>
+  <p class="a">当然。因为必须让真相得以浮现，并从中汲取一切后果。政治人物负有一份历史性的责任，去改变这一切。我们已别无选择。</p>
+
+  <!-- Q4 -->
+  <div class="q">如果当初只要严格遵守司法部长的刑事政策<span class="annot" data-pop="circulaire">通令<sup>*</sup></span>⁠，这场悲剧本可避免吗？</div>
+  <div class="annot-text" id="ann-circulaire">
+    <strong>«&nbsp;circulaire de politique pénale&nbsp;»──刑事政策通令</strong>　法国司法部长依法可向各地检察机关下发「刑事政策通令」（<em class="fr">circulaires</em>⁠），统一指引某类犯罪的起诉与求刑取向。它不是法律，而是行政指引，但对检察官（<em class="fr">parquet</em>⁠）有实务约束力。提问的言下之意是：失灵究竟出在「规则不够」，还是「现有规则没被执行」。
+  </div>
+  <p class="a">调查会给出答案。这些年对司法的投入增加是有用的。用 <em class="fr">François Hollande</em> 任内最后一位司法部长的话说，司法部到 2016 年已濒于「<span class="annot" data-pop="clochard">沦为乞丐<sup>*</sup></span>⁠」。此后，预算增长了超过 50%，新增招录了 3000 名<span class="annot" data-pop="magistrat">司法官<sup>*</sup></span>⁠（<em class="fr">magistrats</em>⁠）与书记官。这显然还不够，司法系统在人力上依然吃紧。然而，真正缺的，是对我们司法体系的一场真正改革。透过这件事──但不止这件事──可以看到，暴力的上升迫使我们必须重新构想一种新的司法。因为再也没有什么能回到从前了。</p>
+  <div class="annot-text" id="ann-clochard">
+    <strong>«&nbsp;clochardisation&nbsp;»──「沦为乞丐」/ 赤贫化</strong>　由 <em class="fr">clochard</em>（流浪汉、乞丐）派生的名词，字面意为「使……沦为流浪汉的境地」，在公共财政语境中指某一公共部门因长期投入不足而陷入设备老旧、人力枯竭、运转失灵的赤贫状态。Attal 此处转引的是 <em class="fr">François Hollande</em> 任内最后一位司法部长 <em class="fr">Jean-Jacques Urvoas</em>（2016–2017 在任）对司法系统的诊断。这是 Attal 自陈的引述。
+  </div>
+
+  <div class="annot-text" id="ann-magistrat">
+    <strong>«&nbsp;magistrat&nbsp;»──司法官（含法官与检察官）</strong>　法语 <em class="fr">magistrat</em> 是一个统称，涵盖法国职业司法人员的两大类，中文常译「司法官」，与仅指审判者的「法官」不完全对应：<br><br>① <strong>坐着的司法官（<em class="fr">magistrats du siège</em>⁠，即法官）</strong>──庭审时端坐，负责审理案件、依法作出裁判。宪法以「<em class="fr">inamovibilité</em>⁠」（不可调动原则）保障其独立：未经本人同意，不得将其调离或免职，以隔绝层级与政治压力。<br><br>② <strong>站着的司法官（<em class="fr">magistrats du parquet</em>⁠，即检察官）</strong>──庭审时起立宣读公诉意见，代表社会与公共利益、决定是否起诉、指挥侦查。详见下文「检察机关」注释。<br><br>本文为行文流畅，多数语境将 <em class="fr">magistrats</em> 简译为「法官」，但读者宜知此词在原文中通常同时涵盖法官与检察官两类──这一点对理解 Attal 关于检察官自动求刑、最高司法委员会改革等主张尤为关键。书记官（<em class="fr">greffier</em>⁠）则是另一职业类别，负责庭审记录与司法文书，不属于 <em class="fr">magistrat</em>⁠。
+  </div>
+
+  <!-- Q5 -->
+  <div class="q">至于投入的增加，无论是共和国总统还是司法部长，都说这并不是该讨论的真正问题⋯⋯</div>
+  <p class="a">行政调查会查清错误与责任究竟在哪。问题并不只出在投入这一项上，但也不能把这个问题一挥手就打发掉。我提出一个目标：从 2027 年起就启动新一轮 3000 名法官与书记官的招录。但投入不是全部：今天这套系统已经陈旧、过时。当一根水管漏了，你往里灌再多的水，照样有一半会漏掉。必须从头到脚全面重审。首先是数字化。必须打通各类档案，在警察、宪兵、法官与<span class="annot" data-pop="edunat">国民教育部<sup>*</sup></span>之间建立完全互联。还要在各个环节都引入 AI，让我们能在未来三年内，彻底告别司法系统里任何一份纸质卷宗。我们不该再让法官或书记官把精力耗在庭审纪要的整理上，包括卷宗里控方与辩方要点的梳理。AI 与数字化，等于给法官腾出更多时间。所以这就相当于，比我提议的那 3000 人之外，又多招了一批法官和书记官。</p>
+  <div class="annot-text" id="ann-edunat">
+    <strong>«&nbsp;Éducation nationale&nbsp;»──国民教育部</strong>　法国主管全国中小学教育的中央部门。Attal 在 2023 年 7 月至 2024 年 1 月间曾任国民教育部长，随后出任总理；这段履历也是他下文谈到校园欺凌处置时的个人依据。
+  </div>
+
+  <!-- Q6 -->
+  <div class="q">在这套重组之外，是否还需要通过一套新的刑事政策，发出从严的信号？</div>
+  <p class="a">需要。必须加重刑罚。在治安与司法问题上，没有所谓「<span class="annot" data-pop="emt">两者兼顾<sup>*</sup></span>⁠」的空间。因此，我希望针对未成年人的犯罪<span class="annot" data-pop="imprescr">不受追诉时效限制<sup>*</sup></span>⁠。其次，要把强奸未成年人的法定刑，对齐到谋杀罪的法定刑──对于连续作案者，直至无期徒刑。此外我认为，刑事通令应当更清晰、更严厉：对于侵害未成年人的犯罪，<span class="annot" data-pop="parquet">检察官<sup>*</sup></span>应当一律自动求处<span class="annot" data-pop="ferme">实刑监禁<sup>*</sup></span>⁠。许多法国人感到震惊：在近期一起巴黎校园环境内的恋童犯罪案审理中，检察机关在求刑时竟没有要求实刑羁押⋯⋯这对任何一个公民来说都难以理解。</p>
+  <div class="annot-text" id="ann-emt">
+    <strong>«&nbsp;en même temps&nbsp;»──「两者兼顾」</strong>　<em class="fr">en même temps</em> 字面是「与此同时」，自 2017 年起成为 <em class="fr">Emmanuel Macron</em> 标志性的执政修辞，指在看似对立的两端之间同时取其所长、不作非此即彼的选择，是 Macron 主义的核心话术之一。Attal 这里反用了这个词──宣称在治安与司法议题上「没有 en même temps 的空间」，可以读作他与 Macron 「兼顾式」中间路线的一次有意拉开距离。
+  </div>
+
+  <div class="annot-text" id="ann-imprescr">
+    <strong>«&nbsp;imprescriptibilité&nbsp;»──追诉时效不灭</strong>　法国刑法以「追诉时效」（<em class="fr">prescription de l’action publique</em>⁠）限定犯罪在事发后多少年内可被起诉，逾期则不再追诉。「<em class="fr">imprescriptibilité</em>⁠」即取消这一时限。<strong>关键背景</strong>⁠：在现行法国法中，追诉时效不灭<strong>仅适用于反人类罪与种族灭绝罪</strong>（刑法典第 213-5 条，源自 1964 年 12 月 26 日法律）。针对未成年人的性犯罪目前并非「不灭」，而是适用加长时效──自受害者成年起 30 年（2018 年 8 月 3 日法律），即最迟可追诉至 48 岁，立法理由是顾及「创伤性失忆」往往使受害者多年后才能指控。<br><br>Attal 主张把「时效不灭」扩及未成年人犯罪，属对现行体系的重大突破。这一诉求由来已久（儿童保护团体长期呼吁，2026 年 4 月一份议会报告亦建议如此），但争议在于：宪法委员会历来倾向认为，把「时效不灭」从反人类罪外溢到其他罪行可能违宪，且会稀释这一最高保留罪类的特殊地位。
+  </div>
+
+  <div class="annot-text" id="ann-parquet">
+    <strong>«&nbsp;parquet&nbsp;» / «&nbsp;procureur&nbsp;»──检察机关 / 检察官</strong>　<em class="fr">parquet</em>（又称 <em class="fr">ministère public</em>⁠，公诉机关）指检察官（<em class="fr">procureurs</em>⁠）的整体，因庭审时起立宣读公诉意见而别称「站着的司法官」（<em class="fr">magistrature debout</em>⁠），区别于端坐审判的法官。检察官的职能是决定是否起诉（可不予起诉、提替代措施或移送侦查法官）、指挥警察与宪兵侦查、并在庭上向法官「求刑」（<em class="fr">requérir</em>⁠）。<br><br>与法官不同，检察官受司法部长层级管辖、不享有「不可调动」保障──这是法国司法独立长期争议的核心。<strong>2013 年 7 月 25 日法律</strong>（Taubira 任内）规定，司法部长<strong>不得再就具体个案向检察官下达指令</strong>⁠，只能下发普遍性的刑事政策指引。Attal 主张「检察官对侵害未成年人犯罪一律自动求处实刑」，正是要以刚性通令收窄检察官在此类案件中的求刑裁量空间。本文「设立专司恋童犯罪的全国性检察机关」（<em class="fr">parquet national</em>⁠）也是这一逻辑的延伸。
+  </div>
+
+  <div class="annot-text" id="ann-ferme">
+    <strong>«&nbsp;prison ferme / détention ferme&nbsp;»──实刑监禁</strong>　法国量刑中，「<em class="fr">ferme</em>⁠」（字面「确定的、不打折的」）指<strong>必须实际服满的监禁刑</strong>⁠，与「缓期执行」（<em class="fr">sursis</em>⁠，附条件不予收监）相对。「<em class="fr">prison ferme</em>⁠」即不附缓刑、当即收监的实刑。Attal 主张对侵害未成年人的犯罪，检察官应「自动求处实刑」，并对近期一起巴黎校园恋童案中检方未要求实刑羁押表示不解。这与他取消「刑罚自动调整」「附条件提前释放」的主张构成同一从严取向。
+  </div>
+  <p class="a cont">我还提议重写<span class="annot" data-pop="cpp">刑事诉讼法典<sup>*</sup></span>⁠，它如今变得过于<span class="annot" data-pop="kafka">「卡夫卡式」<sup>*</sup></span>⁠，反而让程序变得脆弱。一个由法官、律师、执法力量组成的委员会，应当在 100 天内拿出一部新法典。我还要补充：当司法作出裁判、刑罚一经宣告，它就应当被执行。我提议取消<span class="annot" data-pop="jap">刑罚执行法官<sup>*</sup></span>（JAP）。目前的情况是，一名法官判下刑罚，之后还能由刑罚执行法官重新裁量。一项定罪不应当是一场讨价还价。这样做还能腾出数百个法官岗位，去为司法纾压。同样的思路下，我也提议取消刑罚的自动调整机制，尤其是自动的<span class="annot" data-pop="lsc">附条件提前释放<sup>*</sup></span>⁠。而受害者所承受的「刑罚」，是无法被调整减免的。</p>
+  <div class="annot-text" id="ann-cpp">
+    <strong>«&nbsp;code de procédure pénale&nbsp;»──刑事诉讼法典</strong>　法国规范刑事案件侦查、起诉、审判与执行全流程的基本法典，与规定罪与刑的《刑法典》（<em class="fr">code pénal</em>⁠）并列。Attal 主张在 100 天内重写，理由是程序过于繁复反而拖累办案。
+  </div>
+  <div class="annot-text" id="ann-kafka">
+    <strong>«&nbsp;kafkaïen&nbsp;»──卡夫卡式</strong>　源自作家 <em class="fr">Franz Kafka</em>⁠，形容官僚程序荒诞、繁琐、令人无所适从，仿佛陷入无尽的程序迷宫。Attal 用它形容现行刑诉法典的繁冗。
+  </div>
+  <div class="annot-text" id="ann-jap">
+    <strong>«&nbsp;juge d’application des peines (JAP)&nbsp;»──刑罚执行法官</strong>　法国司法体系中专门负责在判决生效后裁量刑罚执行方式的法官，可决定减刑、假释、附条件释放、刑期调整等。Attal 主张取消这一职位，理由是它使「已宣告的刑罚」可被二次裁量，相当于把定罪变成可议价的事项。这一主张在法律界存在争议，反对者认为刑罚个别化与再社会化正是该机制的功能所在。
+  </div>
+  <div class="annot-text" id="ann-lsc">
+    <strong>«&nbsp;libération sous contrainte&nbsp;»──附条件提前释放</strong>　法国刑罚执行制度中的一项机制，符合条件的服刑人在刑期末段可在司法监督、电子监控等约束下提前出狱，以促进再社会化、缓解监狱拥挤。Attal 主张取消其「自动」适用。
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    「每当有人就一起针对未成年人的性侵或强奸提出报案，我都希望能在 48 小时内启动行动，并在三个月内完成调查。」
+    <span class="pf">«&nbsp;Chaque fois qu’une plainte est déposée pour une agression sexuelle ou un viol sur mineur, je souhaite qu’une action soit engagée en moins de 48 heures et que l’enquête se déroule en moins de trois mois&nbsp;»</span>
+  </div>
+
+  <!-- Q castration -->
+  <div class="q"><em class="fr">Bruno Retailleau</em> 甚至提到了化学阉割。这是一种解决办法吗？</div>
+  <p class="a">我是个务实的人，我唯一在意的是成效。我还没有听到专家呼吁普遍推行这项措施──它目前是可以在自愿基础上施行的。但可以肯定的是，在法国，对于刑满出狱的恋童犯，约束性的措施太少了。<span class="annot" data-pop="ru">英国<sup>*</sup></span>已经建立起一套真正的禁令政策：禁止在无人监督的情况下与未成年人接触、限制使用互联网、强制申报本人的电子设备、限制出行──这些都值得我们借鉴。</p>
+  <div class="annot-text" id="ann-ru">
+    <strong>«&nbsp;Royaume-Uni&nbsp;»──英国的性犯罪者管理</strong>　英国对已定罪的性犯罪者设有较法国更具约束力的出狱后监管体系（如登记制度、接触未成年人禁令、出行与网络使用限制等）。Attal 此处援引英国模式作为参照。这是描述性的对外比较，专访未给出具体法条名称，本注释亦不补充未经原文确认的细节。
+  </div>
+
+  <!-- Q évaluer magistrats -->
+  <div class="q">是否应当对法官加强考核、并在其失职时予以惩处？</div>
+  <p class="a">必须终结司法系统里那套「<span class="annot" data-pop="vagues">别惹事<sup>*</sup></span>⁠」的文化。我要为法官确立一种问责与惩戒的文化。这套让人觉得「在自我保护」的系统，再也不能继续了。我当年被任命为国民教育部长时，发生过 Nicolas 那起惨剧──那个男孩因在学校遭受欺凌而自杀。他的母亲此前曾投诉，却收到一封来自<span class="annot" data-pop="recto">大区学监署<sup>*</sup></span>的恐吓信，威胁说如果她继续追究，就要对她提起诉讼。我当时作出了强硬决定，对原任女学监启动了惩戒程序。这在国民教育的历史上从未有过。遗憾的是，接替我的那届政府又把这一程序撤销了。这令人无法接受。至于法官，必须重新审视<span class="annot" data-pop="csm">最高司法委员会<sup>*</sup></span>（CSM）的职责与组成。这不能成为禁区。我提议在其中纳入受害者协会的代表。CSM 主席应当向国家与人民负责，因此也应当每年接受一次议会的质询。</p>
+  <div class="annot-text" id="ann-vagues">
+    <strong>«&nbsp;pas de vagues&nbsp;»──「别惹事」/「别掀波澜」</strong>　法国公共部门（尤其教育与司法系统）中一种广受批评的内部文化，字面意为「别起波浪」，指为了避免麻烦、维护机构声誉而压下问题、息事宁人，不愿让事件公开化。Attal 借自己任教育部长时的 Nicolas 案，把这套「别惹事」文化的批评从校园延伸到司法系统。
+  </div>
+  <div class="annot-text" id="ann-recto">
+    <strong>«&nbsp;rectorat&nbsp;»──大区学监署</strong>　法国国民教育部派驻各学区（<em class="fr">académie</em>⁠）的地方行政机构，由「<em class="fr">recteur / rectrice</em>⁠」（大区学监）领导，统管本学区的中小学教育行政。Attal 提到的「<em class="fr">l’ancienne rectrice</em>⁠」即当时涉事学区的女学监。这里陈述的是 Attal 本人对该事件经过的叙述。
+  </div>
+  <div class="annot-text" id="ann-csm">
+    <strong>«&nbsp;Conseil supérieur de la magistrature (CSM)&nbsp;»──最高司法委员会</strong>　法国宪法机构，负责法官（<em class="fr">magistrats du siège</em>⁠）与检察官（<em class="fr">magistrats du parquet</em>⁠）的任命提名、纪律惩戒等事务，旨在保障司法独立。其组成与权限由宪法第 65 条规定。Attal 主张改革其组成（纳入受害者协会代表）、并让其主席每年接受议会质询──这触及司法独立与民主问责之间的张力，是法律界一个高度敏感的议题。
+  </div>
+
+  <!-- Q syndicalisation -->
+  <div class="q"><em class="fr">Édouard Philippe</em> 希望禁止法官加入工会⋯⋯</div>
+  <p class="a">我不认为法官能否<span class="annot" data-pop="syndicat">组织工会<sup>*</sup></span>⁠，跟我们正在讨论的事情有什么关系。一方面，必须终结司法系统里的「别惹事」文化，这一点我明确主张；但另一方面，我看不出禁止法官加入工会能带来什么。</p>
+  <div class="annot-text" id="ann-syndicat">
+    <strong>«&nbsp;syndicalisation des magistrats&nbsp;»──司法官工会化之争</strong>　法国司法官有权组建工会，此权利由 1972 年法国最高行政法院（<em class="fr">Conseil d’État</em>⁠）的 Obrego 判例确认。主要有两大工会：较保守、规模最大的 <em class="fr">Union syndicale des magistrats</em>（USM），与 1968 年成立、立场偏左的 <em class="fr">Syndicat de la magistrature</em>（SM）。<br><br>近年来，部分右翼政治人物（如 <em class="fr">Bruno Retailleau</em>⁠、<em class="fr">David Lisnard</em>⁠，以及本段提到的 <em class="fr">Édouard Philippe</em>⁠）主张取缔或限制司法官工会，核心论据是：司法应保持政治中立，而工会的公开政治表态与司法官章程（<em class="fr">ordonnance</em> 第 10 条「司法机关不得作政治性表态」）相抵触。争议的标志性事件包括 2013 年 SM 总部的「<em class="fr">Mur des cons</em>⁠」（贴有右翼政界人物等照片的羞辱墙）风波，以及 SM 参加左翼活动引发的中立性质疑。<br><br>提问正是就 Philippe 的「禁止司法官入会」主张征询 Attal 看法。Attal 在此把两件事区隔开：他赞成终结司法系统的「别惹事」文化，但认为禁止工会本身解决不了问题。这里陈述的是双方各自的公开立场，不含对其动机的推断。
+  </div>
+
+  <!-- Q flux d'affaires -->
+  <div class="q">该如何处理涉及侵害未成年人的大量案件？</div>
+  <p class="a">首先，我要一种「紧急文化」。每当有人就一起针对未成年人的性侵或强奸提出报案，我都希望能在 48 小时内启动行动，并在三个月内完成调查。应当把恋童犯的处置，对标对恐怖分子的处置。在司法层面，需要一条专门组织起来的刑事处置链条。这意味着要设立一个专司恋童犯罪的<span class="annot" data-pop="pnat">全国性检察机关<sup>*</sup></span>⁠，配以极为快速的行政程序，并能够顺藤摸瓜追查整个犯罪网络。最后，我认为应当把恋童犯纳入档案管理，仿照「<span class="annot" data-pop="fiches">S 类档案<sup>*</sup></span>⁠」的模式。在这个问题上，我支持议员 <em class="fr">Antoine Vermorel</em> 的主张。任何机构，无论公立还是私立，都不应当在未核实其工作人员背景的情况下接收儿童：我担任总理期间，曾为托儿所和<span class="annot" data-pop="ase">儿童社会救助<sup>*</sup></span>体系设立过一种「品行证明」，应当把它推广到一切与儿童相关的公立或私立用人单位。目标很明确：再不能有任何一个未经核查的人，被放到我们孩子身边。我清楚，这些改变会引发阻力、抵触与<span class="annot" data-pop="corpo">本位主义<sup>*</sup></span>⁠。但我们别无选择，只能毫不含糊地推进。如果需要诉诸<span class="annot" data-pop="referendum">公投<sup>*</sup></span>来突破阻碍、从根本上改造我们的司法，那么我已经准备好了。</p>
+  <div class="annot-text" id="ann-pnat">
+    <strong>«&nbsp;parquet national dédié&nbsp;»──专门的全国性检察机关</strong>　Attal 主张仿照法国已有的「全国反恐检察院」（<em class="fr">parquet national antiterroriste</em>⁠，PNAT）或「全国金融检察院」（<em class="fr">parquet national financier</em>⁠，PNF）的模式，设立一个专司恋童犯罪、跨地域统一指挥侦查与起诉的全国性检察机关。这与他「把恋童犯处置对标恐怖分子处置」的核心主张一脉相承。
+  </div>
+  <div class="annot-text" id="ann-fiches">
+    <strong>«&nbsp;fichés S&nbsp;»──S 类档案</strong>　法国「公共安全通缉档案」（<em class="fr">fichier des personnes recherchées</em>⁠）中的一个类别，「S」代表「<em class="fr">sûreté de l’État</em>⁠」（国家安全），用于标记被情报部门认为可能危害国家安全的人员（最常与反恐关联）。被「fiché S」并不等于已犯罪，而是一种监控与情报标记。议员 <em class="fr">Antoine Vermorel-Marques</em>（LR，<em class="fr">Loire</em> 第五选区）在 Lyhanna 案后提出，仿照该模式建立一个统一的「性侵害者档案」（fiche AS, <em class="fr">agresseur sexuel</em>⁠），把分散在警察、宪兵、市政、教育系统各自数据库里的举报与报案汇集一处，并向检察官自动预警。Attal 在此表态支持这一方向。
+  </div>
+  <div class="annot-text" id="ann-ase">
+    <strong>«&nbsp;Aide sociale à l’enfance (ASE)&nbsp;»──儿童社会救助</strong>　法国由各省（<em class="fr">département</em>⁠）负责的儿童保护公共服务体系，负责处境危险或被安置儿童的照护与跟踪。Attal 提到的「品行证明」（<em class="fr">attestation d’honorabilité</em>⁠）是用于核查从业人员有无相关犯罪前科的机制，他主张从托儿所、ASE 推广到一切涉及儿童的用人场景。
+  </div>
+  <div class="annot-text" id="ann-referendum">
+    <strong>«&nbsp;référendum&nbsp;»──公投</strong>　法国宪法第 11 条授权总统就特定范围的议题提请全民公投。Attal 提出，若司法改革在议会或体制内遭遇阻力，他准备动用公投来推动──这是一种诉诸民意、绕开机构阻力的政治姿态。这里陈述的是 Attal 的意愿表态。
+  </div>
+
+  <div class="annot-text" id="ann-corpo">
+    <strong>«&nbsp;corporatismes&nbsp;»──本位主义 / 行业自利</strong>　源自 <em class="fr">corporation</em>（行会、同业团体），在法国政治话语里 <em class="fr">corporatisme</em> 通常带贬义，指某一职业群体、行业或机构为维护自身既得利益、特权与「地盘」而抵制改革、排斥外部监督的倾向──核心意象是「把行业利益置于公共利益之上」。Attal 在此预判，他对司法、教育等系统的改革会触动相关职业群体（法官、各类从业者）的既有利益，从而遭遇这种本位式抵制。中文「本位主义」恰好对应这层「以本部门 / 本行业利益为本位」的语义，是该词在中文政治语汇里的惯用对译。
+  </div>
+
+  <!-- Q prisons -->
+  <div class="q">法官们反驳说，监狱本就人满为患，这才迫使他们不得不从轻量刑⋯⋯</div>
+  <p class="a">这是事实。我坦率承认，历届政府在这一点上是失败的。过去两届总统任期内本应新建的 15000 个监狱床位，最终只有勉强超过三分之一会真正交付。监狱越满，刑罚就越是形同虚设，因为已经没有地方再关押犯人了。所以监狱过度拥挤不仅仅是在押人员的问题，更是司法本身的问题。新增床位的建设必须成为优先事项。需要一部「<span class="annot" data-pop="notredame">Notre-Dame 法<sup>*</sup></span>⁠」，来取消几乎全部那些阻碍或拖延此类建设的规则。另一方面，我们撞上了大多数市镇的抵制：它们不愿在自己的辖区里建监狱。需要一套激励机制：我提议，凡新建监狱床位，都相应抵减该市镇应承担的社会保障性住房的建设义务。归根结底，省长与国家必须接管主导权。鉴于这一议题具有重大的全国性利益，国家应当能够在不依赖地方民选官员同意的情况下，自行决定监狱的选址兴建。</p>
+  <div class="annot-text" id="ann-notredame">
+    <strong>«&nbsp;loi «&nbsp;Notre-Dame&nbsp;»&nbsp;»──「Notre-Dame 法」式的特别程序</strong>　典出 2019 年 <em class="fr">Notre-Dame de Paris</em> 大教堂火灾后，议会通过的一部为重建工程量身定制的特别法，授权在公共采购、环保、城市规划等方面豁免或简化大量常规程序，以加速重建。Attal 借这一先例，主张为监狱建设立一部同类「特事特办」法，绕开常规审批的繁琐。
+  </div>
+
+  <!-- Q primaire -->
+  <div class="q">你会在<span class="annot" data-pop="primaire">党内初选<sup>*</sup></span>中、还是在总统大选第一轮里捍卫这些主张？</div>
+  <div class="annot-text" id="ann-primaire">
+    <strong>«&nbsp;primaire&nbsp;»──党内初选</strong>　提问把「初选」与「第一轮」并置，触及 2027 总统大选前右翼与中间阵营是否、以及如何产生统一候选人的悬念。在本期同版的评论中，《Le Figaro》把 <em class="fr">Retailleau</em>⁠、<em class="fr">Attal</em>⁠、<em class="fr">Philippe</em> 框为「<em class="fr">socle commun</em>⁠」共同基石内部的三位竞争者。Attal 在回答中回避了「初选还是第一轮」的二选一，转而强调这些是他「为当选总统而提出」的主张。
+  </div>
+  <p class="a">这些是我向法国人提出的主张，也是我未来若当选总统、会去落实的事。我能设身处地体会那些这样想的法国人：「<em class="fr">非得出了惨剧，他们才肯向我们拿出主张！</em>⁠」──但我不是这样的人。这个议题我牵挂已久。担任总理时，我就把「权威」立为施政的一根支柱。一年前，在 2025 年 5 月，我曾提出过 <span class="annot" data-pop="conv82">82 项<sup>*</sup></span>关于治安、移民与司法的主张，其中已有很重的一块，放在打击针对妇女与儿童的暴力上。</p>
+  <div class="annot-text" id="ann-conv82">
+    <strong>「82 项主张」──Renaissance「régalien 主权事务大会」</strong>　于 2025 年 5 月 26 日由 Attal 正式发布。该大会历时约三个月、经百余场听证（民选官员、研究者、专家、一线人士、工会、协会），最终形成 <strong>82 项主张</strong>⁠，并交全体党员投票（约七成参与）。<br><br>主张分四大轴：<strong>安全</strong>──更强威慑、更重预防，终结「有罪不罚」；<strong>司法</strong>──重建信任、遏制累犯、以工作促再社会化，追求快速、清晰、人性化的司法；<strong>移民</strong>──以「劳动」作为移民与融入的条件，主张「公正而严格」的移民政策；<strong>共和价值</strong>──赋予共和国自卫的手段、反对一切歧视。这是 Attal 出任党总书记后「意识形态再武装」的首块基石，媒体多以「权威、法律、边界」三件套概括其框架；具体措施例如禁止 15 岁以下女童佩戴头巾、移民「劳动优先」（<em class="fr">préférence travail</em>⁠）等。
+  </div>
+</article>
+
+<!-- ============================================================ -->
+<!-- CONTEXT BOX                                                  -->
+<!-- ============================================================ -->
+<div class="encadre">
+  <div class="encadre-label">本期同版 · L’événement du jour</div>
+  <p>本篇专访刊于《Le Figaro》2026 年 6 月 13–14 日周末版「L’événement」专栏，是该期围绕 Lyhanna 案展开的系列报道之一。头版标题为「<em class="fr">Lyhanna : la semaine qui a ébranlé la justice française</em>⁠」。</p>
+  <p>同版另有记者 <em class="fr">Guillaume Tabard</em> 的评论「<em class="fr">Des candidats enfin sommés de parler du fond</em>──候选人终于被迫谈实质」，将 <em class="fr">Bruno Retailleau</em>（先于一周前在《Le Parisien》受访）、<em class="fr">Gabriel Attal</em>（本篇）与 <em class="fr">Édouard Philippe</em>（次日将在《Le Parisien》受访）并列为 2027 总统竞选中三位表态者。该评论为另一篇报道，未纳入本单篇译稿。</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- COPYRIGHT                                                    -->
+<!-- ============================================================ -->
+<div class="copyright">
+  <div class="block-zh">
+    <p>摘译自《Le Figaro》· 2026 年 6 月 13–14 日周末版 · N° 25 440 · 原文 PAGE 4</p>
+    <p>原文参见：lefigaro.fr 主站 Mon compte；或通过 Kiosque Figaro 应用（iOS / Android）访问当期日刊</p>
+    <p>原文著作权归 Société du Figaro SAS 所有 — <em>Tous droits réservés</em></p>
+    <p>本页为摘译稿，仅供个人法语学习。</p>
+    <p>禁止任何商业用途、复制转载、改编、上传或二次出版本页面内容。</p>
+    <p>如需引用，请以《Le Figaro》原报道为准并标明出处。</p>
+  </div>
+  <hr class="sep-line">
+  <div class="block-fr">
+    <p>Source : Le Figaro · édition du week-end du 13–14 juin 2026 · N° 25 440 · page 4</p>
+    <p>Article original : lefigaro.fr (Mon compte) ou via l’application Kiosque Figaro (iOS / Android), accès au PDF du jour</p>
+    <p>© Société du Figaro SAS — Tous droits réservés</p>
+    <p>Cette page est une traduction, à des fins d’apprentissage personnel du français.</p>
+    <p>Toute utilisation commerciale, reproduction, modification, mise en ligne ou republication du contenu est interdite.</p>
+    <p>Pour toute citation, veuillez vous référer à l’article original du Figaro en mentionnant la source.</p>
+  </div>
+  <p class="footer-claude">Claude [Anthropic] 译</p>
+</div>
+
+<a href="#" class="totop" id="totop" aria-label="回到顶部">↑</a>
+
+<script>
+(function(){
+  document.querySelectorAll('.annot').forEach(function(el){
+    el.addEventListener('click',function(e){
+      e.stopPropagation();
+      var key=el.getAttribute('data-pop');
+      var pop=document.getElementById('ann-'+key);
+      if(!pop)return;
+      document.querySelectorAll('.annot-text.show').forEach(function(other){
+        if(other!==pop)other.classList.remove('show');
+      });
+      pop.classList.toggle('show');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.annot') && !e.target.closest('.annot-text')){
+      if(!document.body.classList.contains('annot-all')){
+        document.querySelectorAll('.annot-text.show').forEach(function(p){p.classList.remove('show');});
+      }
+    }
+  });
+  var chk=document.getElementById('annotAll');
+  var lbl=document.getElementById('annotLabel');
+  chk.addEventListener('change',function(){
+    document.body.classList.toggle('annot-all',chk.checked);
+    lbl.textContent=chk.checked?'Hide notes':'Notes';
+  });
+  var totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600){totop.classList.add('show');}else{totop.classList.remove('show');}
+  });
+  totop.addEventListener('click',function(e){
+    e.preventDefault();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
